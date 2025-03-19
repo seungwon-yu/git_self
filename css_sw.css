@@ -23,6 +23,7 @@ h3 {
   float: right;
   margin-top: 35px;
   padding-left: 50px;
+  white-space: pre-line;
 }
 
 /* 왼쪽에 글띄우기 */
@@ -30,6 +31,7 @@ h3 {
   float: left;
   margin-top: 35px;
   padding-right: 50px;
+  white-space: pre-line;
 }
 
 /* 이미지,글 투명하게 만들었다가 떠오르게 만들기 */
@@ -108,7 +110,7 @@ html {
 }
 
 .pages:nth-child(3) {
-  background-color: #e0d8cc;
+  background-color: #99886e;
   background-size: cover;
 }
 
