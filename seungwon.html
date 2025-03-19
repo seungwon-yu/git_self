@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css_sw.css" />
     <title>자기소개</title>
+    <script>
+      // 로딩될때 pages와 container받아오기 > container에서 overflow되기때문에
+      document.addEventListener('DOMContentLoaded', function () {
+        let pages = document.querySelectorAll('.pages');
+        let container = document.getElementById('container');
+
+        function checkVisibility() {
+          pages.forEach((page) => {
+            let visable = page.getBoundingClientRect();
+            if (visable.top < window.innerHeight * 0.75 && visable.bottom > 0) {
+              page.classList.add('visible');
+            } else {
+              page.classList.remove('visible');
+            }
+          });
+          // 각 파일이 읽어올때 getboundingclientrect함수로 위치정보를 받아와서 visible 클래스 추가,제거
+        }
+        checkVisibility();
+        container.addEventListener('scroll', checkVisibility);
+      });
+    </script>
   </head>
   <body>
     <div id="container">
@@ -22,7 +43,7 @@
 
       <div class="pages">
         <div class="cover">
-          <img src="./444.jpg" alt="" width="450px;" height="500px" />
+          <img src="./444.jpg" alt="" width="450px" height="500px" />
           <h3 class="intext_left">
             MBTI : INFP
             <br />
@@ -34,9 +55,7 @@
 
       <div class="pages">
         <div class="cover">
-          <span class="background"
-            ><img src="./555.jpg" width="60%;" height="60%"
-          /></span>
+          <img src="./555.jpg" width="60%" height="60%" />
         </div>
       </div>
 
@@ -45,12 +64,12 @@
           <div class="sort_img">
             <div class="imgs">
               <img class="list_img" src="./123.jpg" alt="" />
-              <h3>🐶</h3>
+              <h3>라떼.jpg</h3>
             </div>
 
             <div class="imgs">
               <img class="list_img2" src="./234.jpg" alt="" />
-              <h3>🐶</h3>
+              <h3>라떼.jpg</h3>
             </div>
           </div>
         </div>
